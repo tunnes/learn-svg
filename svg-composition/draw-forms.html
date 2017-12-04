@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Draw Forms</title>
+  </head>
+  <body>
+    <style media="screen">
+      svg{
+        border: 1px solid black;
+        display: block;
+        margin: 50px auto;
+        height: 80px;
+        width: 565px;
+      }
+    </style>
+
+    <svg>
+      <!-- Draw an retangle -->
+      <text x="25" y="20" font-size="10px">RETANGLE</text>
+      <rect x="10" y="25" width="80" height="20"/>
+
+      <!-- Draw an circle -->
+      <text x="132" y="20" font-size="10px">CIRCLE</text>
+      <circle r="10" cx="150" cy="35" />
+
+      <!-- Draw an ellipse -->
+      <text x="210" y="20" font-size="10px">ELLIPSE</text>
+      <ellipse rx="15" ry="10" cx="230" cy="35" stroke="#000"/>
+
+      <!-- Draw an line -->
+      <text x="290" y="20" font-size="10px">LINE</text>
+      <line x1="280" y1="35" x2="320" y2="40" stroke="#000" stroke-width="2"/>
+
+      <!-- Draw an polyline (line with various points..) -->
+      <text x="340" y="20" font-size="10px">POLYLINE</text>
+      <polyline points="350,25 360,50 370,55 380,55" stroke="#000" stroke-width="2" fill="transparent"/>
+
+      <!-- Draw an polygon (like polyline but but will always join..) -->
+      <text x="410" y="20" font-size="10px">POLYGON</text>
+      <polygon points="430,25 410,50 460,55" fill="#000" stroke="#000" stroke-width="2"/>
+
+      <!--
+          Draw an path (Not draw only manipulate this path)
+          MoveTo (M): Is where you beginning a path
+          LineTo (L): Is an line with x,y cordinates and final cordinate.
+          Arcs (A): The curve with multiple parameters: initial cordinates, convex and concave Boolean and final coordinate.
+      -->
+      <text x="512" y="20" font-size="10px">PATH</text>
+      <path fill="#000" stroke-width="2" stroke="#000" d="M500,30 L500,55 A90,380 0 0,1 550,55 L550,30z" />
+    </svg>
+
+
+  </body>
+</html>

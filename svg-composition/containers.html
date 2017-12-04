@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Containers</title>
+</head>
+<body>
+    <style>
+        svg{
+            border: 1px solid black;
+            height: 200px;
+            width: 400px;
+        }
+    </style>
+    
+    <!-- Using `defs-tag` -->
+    <svg>
+        <defs>
+            <circle id="my-circle" r="25" cx="50" cy="50" />
+        </defs>
+
+        <use xlink:href="#my-circle"/>
+    </svg>
+
+    <!-- Using `g-tag` to group an manuplate the elements present inside group -->
+    <svg>
+        <g fill="blue">
+            <circle r="25" cx="50" cy="50" />
+            <circle r="25" cx="150" cy="150" />            
+        </g>
+    </svg>    
+    
+    <!-- Using `symbol-tag` this tag is like `defs` but it's has an own viewBox -->
+    <svg>
+        <symbol id="my-symbol" viewBox="0 0 800 400">
+            <circle  r="25" cx="50" cy="50" />
+        </symbol>
+
+        <use xlink:href="#my-symbol"/>
+    </svg>
+        
+</body>
+</html>
