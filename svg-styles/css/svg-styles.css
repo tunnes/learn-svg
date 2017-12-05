@@ -1,0 +1,10 @@
+.my-another-svg{
+    border:1px solid #c20b50; 
+    margin: 50px auto; 
+    display: block;
+}
+.my-another-circle{
+    fill:#c20b42; 
+    stroke: red; 
+    stroke-width: 10px
+}

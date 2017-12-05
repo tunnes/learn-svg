@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG weight properties</title>
+</head>
+<body>
+    <!-- 
+        Style Hierarchy:
+            - Browser styles (User Agent)
+            - Presentation Attributes
+            - External Stylesheet
+            - Document Styles (Style Tag)
+            - Inline Styles
+            - Animation (JavaScript Libs)
+            - Override Styles (!Important)
+            - Computed Styles (AI Styles)
+
+    -->
+    <!-- 01 - Inline Styles  -->
+    <svg style='width:300px; height:150px; border:1px solid #c20b50; margin: 50px auto; display: block;' viewBox="0 0 400 200" >
+        <circle r="50" cx="200" cy="100" style="fill:#c20b42; stroke: red; stroke-width:10px"/>
+    </svg>
+
+    <!-- 02 - Styles inside SVG -->
+    <svg width='250' height='125' viewBox="0 0 400 200" >
+        <style>
+            svg{
+                border:1px solid #c20b50; 
+                margin: 50px auto; 
+                display: block;
+            }
+            circle{
+                fill:#c20b42; 
+                stroke: red; 
+                stroke-width: 10px
+            }
+        </style>
+        <circle r="50" cx="200" cy="100"/>
+    </svg>
+
+    <!-- 03 - Style outside SVG -->
+    <style>
+            .my-svg{
+                border:1px solid #c20b50; 
+                margin: 50px auto; 
+                display: block;
+            }
+            .my-circle{
+                fill:#c20b42; 
+                stroke: red; 
+                stroke-width: 10px
+            }
+    </style>
+    <svg class="my-svg" width='200' height='100' viewBox="0 0 400 200" >
+        <circle class="my-circle" r="50" cx="200" cy="100"/>
+    </svg>
+
+    <!-- 04 - Extrernal SVG style -->
+    <link rel="stylesheet" href="css/svg-styles">
+    <!-- 
+        or usgin `xml-tag`
+        <?xml-stylesheet type="text/css" href="css/svg-styles"?> 
+    -->
+    <svg class="my-another-svg" width='150' height='125' viewBox="0 0 400 200" >
+        <circle class="my-another-circle" r="50" cx="200" cy="100"/>
+    </svg>
+</body>
+</html>
