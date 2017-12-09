@@ -1,0 +1,30 @@
+.container{
+    display: block;
+    max-width: 600px;
+    margin: 150px auto;
+}
+*{ 
+    transition: opacity .5s ease-in-out;
+}
+@media(max-width: 1000px){
+    #pictures, #arc *{
+        opacity: 0;
+    }
+}
+@media(max-width: 800px){
+    #castle{
+        opacity: 0;
+    }
+}
+
+@media(max-width: 600px){
+    *[id^='name-left']{
+        opacity: 0;
+    }
+}
+
+@media(max-width: 400px){
+    #walt-disney{
+        opacity: 0;
+    }
+}
