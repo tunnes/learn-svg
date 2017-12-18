@@ -1,18 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.4 151">
+    <style>
+    *{ 
+    transition: opacity .3s ease-in-out;
+    }
+    @media(max-width: 1000px){
+        #pictures, #arc *{
+            opacity: 0;
+        }
+    }
+    @media(max-width: 800px){
+        #castle{
+            opacity: 0;
+        }
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DisneyBrand</title>
-    <link rel="stylesheet" href="css/svg-disney-styles.css">
-</head>
-<body>
-    <div class="container">
-            <svg viewBox="0 0 212.4 151">
-                <style>
-                
-                </style>
+    @media(max-width: 600px){
+        *[id^='name-left']{
+            opacity: 0;
+        }
+    }
+
+    @media(max-width: 400px){
+        #walt-disney{
+            opacity: 0;
+        }
+    }
+
+    </style>
                 <g id="arc">
                     <path id="ARC1" fill="#BFB9DC" d="M127.6,20.5c-0.1,0.1-0.1,0.1-0.2,0.2c8.6,1.8,16.9,5.1,24.4,9.7C159.3,35,165.9,41,171.3,48
                         c5.4,7,9.5,14.9,12.1,23.3c2.6,8.4,3.7,17.3,3.2,26.1l0,0h1.1l0,0c0.6-9-0.4-18-3-26.6c-2.6-8.6-6.8-16.7-12.3-23.8
@@ -247,7 +261,3 @@
                         L45.5,142.8L45.5,142.8L45.5,142.8z"/>
                 </g>
             </svg>
-            
-    </div> 
-</body>
-</html>

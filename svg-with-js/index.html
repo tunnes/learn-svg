@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .my-svg{
+        border: 1px solid #0e85e0;
+        margin: 200px auto auto;
+        display: block;
+    }
+    .create-circles{
+        background-color: transparent;
+        border: 1px solid #0e85e0;
+        text-transform: uppercase;
+        margin: 20px auto;
+        color: #0e85e0;
+        font-weight: 100;
+        height: 100px;
+        width: 100px;
+        font-size: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: block;
+        outline: none;
+    }
+
+
+</style>
+<body>
+    <svg class="my-svg" width="300" height="300" viewBox="0 0 300 300" />
+    <button class="create-circles">Create Circles</button>
+    
+    <script>
+        var mySVG = document.querySelector('.my-svg');
+    
+    function createCircle(){
+    //  Create an SVG object with 'Name Space':
+        var nameSpaceSVG = 'http://www.w3.org/2000/svg';
+        var myCircle = document.createElementNS(nameSpaceSVG, 'circle');
+        var randonAxix = (size) => { return Math.floor(Math.random() * size)};
+
+    //  Set attributes on SVG object, is necessary set 'Name Space', 'The attribute name', 'The attribute value';
+            console.log(randonAxix(500))
+            myCircle.setAttributeNS(null,'r', 10);
+            myCircle.setAttributeNS(null, 'cx', randonAxix(300) );
+            myCircle.setAttributeNS(null, 'cy', randonAxix(300) );
+            myCircle.setAttributeNS(null, 'fill', '#88b6de');
+            myCircle.setAttributeNS(null, 'stroke', '#2196f3');
+            myCircle.setAttributeNS(null, 'stroke-width', '4');                        
+
+        mySVG.appendChild(myCircle);
+    }   
+
+    var createCirclesBTN = document.querySelector('.create-circles');
+        createCirclesBTN.addEventListener('click', createCircle);
+
+    </script>
+</body>
+</html>
