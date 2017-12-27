@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Filters</title>
+    </head>
+    <body>
+        <style>
+            body{
+                background-color: red;
+            }
+            .wrapper{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                filter: url('#flarg-turbulence');
+                
+            }
+            .flarg{
+                color: white;
+                letter-spacing: 5px;
+                border: 10px solid white;
+                padding: 3vw 4vw;
+                font-size: 4vw;
+                background-color: #8c0606; 
+                /* animation: flarg-moviment 5s steps(360) forwards infinite; */
+            }
+            .flarg span{
+                background-color: #5d1111;
+            }
+            svg{
+                display: none;
+            }
+
+            @keyframes flarg-moviment{
+                to{
+                    font-size: 0vw;
+                    padding: 0vw 0vw;
+                }
+            }
+
+
+        </style>
+        <svg>
+            <defs>
+                <filter id="flarg-turbulence" >
+                    <feTurbulence id="my-turbulence" baseFrequency="0.01" numOctaves="1" seed="8"/>
+                    <feDisplacementMap in="SourceGraphic" scale="25" />
+                </filter>
+            </defs>
+        </svg>
+        <div class="wrapper">
+            <h1 class="flarg">
+                The <span>ocean washed</span> <br>
+                Open your grave
+            </h1>
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            height: 10000px;
+            background: linear-gradient(to bottom, rgb(240, 134, 107), rgb(179, 68, 68));
+        }
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+    <div class="wrapper">
+    <svg width="200px" height="200px" viewBox="0 0 500 500" >
+        <path class="logo" fill="none" stroke="#fff" stroke-width="5" d="M250.2,263.9H106.7V163.2h143.5V263.9z M133.5,270.2
+        c-14.8,0-26.8,12-26.8,26.8c0,14.8,12,26.8,26.8,26.8c14.8,0,26.8-12,26.8-26.8C160.3,282.2,148.3,270.2,133.5,270.2z M240.6,128.7
+        v178.5l-21,25.5L101,299H85.7V128.7H182H240.6z M219.6,101.3c-15.1,0-27.4,12.3-27.4,27.4c0,15.1,12.3,27.4,27.4,27.4
+        s27.4-12.3,27.4-27.4C247,113.6,234.7,101.3,219.6,101.3z M178.5,180.4c-17.4,0-31.5,14.1-31.5,31.5s14.1,31.5,31.5,31.5
+        c17.4,0,31.5-14.1,31.5-31.5S195.9,180.4,178.5,180.4z M260.4,163.1h143.5v100.7H260.4V163.1z M350.3,297c0,14.8,12,26.8,26.8,26.8
+        s26.8-12,26.8-26.8c0-14.8-12-26.8-26.8-26.8S350.3,282.2,350.3,297z M328.6,128.7h96.3v170.2h-15.3L291,332.7l-21-25.5V128.7H328.6
+        z M263.6,128.7c0,15.1,12.3,27.4,27.4,27.4c15.1,0,27.4-12.3,27.4-27.4c0-15.1-12.3-27.4-27.4-27.4
+        C275.9,101.3,263.6,113.6,263.6,128.7z M300.6,211.9c0,17.4,14.1,31.5,31.5,31.5s31.5-14.1,31.5-31.5c0-17.4-14.1-31.5-31.5-31.5
+        S300.6,194.5,300.6,211.9z M85.7,330.7v85.6l132,27.3h72.7l134.6-27.3v-84.9l-134.6,34.9h-72.7L85.7,330.7"/>
+    </svg>
+    <script>
+        var path = document.querySelector('.logo');
+    
+        var pathLength = path.getTotalLength();
+
+        path.style.strokeDasharray = pathLength;
+
+        path.style.strokeDashoffset = pathLength;
+
+
+        window.addEventListener('scroll', function(){
+            var scroll_percentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+            var drawLenght = pathLength * scroll_percentage;  
+                path.style.strokeDashoffset = pathLength - drawLenght;          
+        });
+
+    </script>
+</div>
+</body>
+</html>

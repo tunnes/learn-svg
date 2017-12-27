@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        RaphaëlJs 
+        Uma das primeiras bibliotecas para SVG.
+        Arquivo de tamanho baixo.
+        Suporte amplo.
+
+        D3SJ
+        Mais completa biblioteca de Data Visualization.
+        Recomendação para graficos avançados.
+        Muitos plugins disponiveis.
+
+        Snap.SVG
+        Trabalhar com Design e afins.
+        Muito boa para animações.
+        Suporte até o IE9.
+
+        Greensock (Recomentação do Professor)
+        Biblioteca mais completa para animações.
+        Divisão em modulos drawSVG e morphSVG.
+        Mais performatica.
+    -->
+
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        svg{
+            width: 200px;
+            height: 200px;
+        }
+        .loading{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 7px;
+            animation: blink-text .9s ease-in-out infinite;
+        }
+        .triangle{
+            stroke-dasharray: 17;
+            animation: dash-tringle 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite; 
+
+        }
+        @keyframes dash-tringle {
+            to{
+                stroke-dashoffset: 136;
+            }
+        }
+
+        @keyframes blink-text {
+            50%{
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <svg viewBox="0 0 40 60">
+        <polygon class="triangle" fill="none" stroke="#000" stroke-width="1" points="16,1 32,32 1,32" />
+        <text class="loading" x="0" y="45">Loading...</text>
+    </svg>
+
+</body>
+</html>
